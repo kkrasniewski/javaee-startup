@@ -1,6 +1,22 @@
-# Build
-mvn clean package && docker build -t org.example/JavaEEStartup .
+# Skeleton project 
 
-# RUN
+with all basic dependecies and plugins configurations.
+It might make sense to make it an archetype instead.
 
-docker rm -f JavaEEStartup || true && docker run -d -p 8080:8080 -p 4848:4848 --name JavaEEStartup org.example/JavaEEStartup 
+- Junit5
+
+Unit test framework with Mockito
+
+- Jacoco
+
+Test Coverage plugin
+
+- Checkstyle
+
+Checkstyle is set using code style checks
+
+- Spotbugs
+
+Formerly known as Findbugs
+
+

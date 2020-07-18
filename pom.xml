@@ -144,13 +144,6 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.0.4</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.github.spotbugs</groupId>
-                        <artifactId>spotbugs</artifactId>
-                        <version>4.0.6</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -190,6 +183,11 @@
     <reporting>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+            </plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <reportSets>
@@ -205,6 +203,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -212,6 +213,11 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.0.4</version>
             </plugin>
         </plugins>
     </reporting>
@@ -229,6 +235,7 @@
         <mockito.version>3.2.0</mockito.version>
         <assertj.version>3.14.0</assertj.version>
         <jboss.weld.version>3.1.4.Final</jboss.weld.version>
+        <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <checkstyle.plugin.version>3.1.1</checkstyle.plugin.version>
         <checkstyle.puppycrawl.tools.version>8.34</checkstyle.puppycrawl.tools.version>
     </properties>
